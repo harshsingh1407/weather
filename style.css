@@ -3,19 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* NEW Color Palette for Modern Dark Theme */
 :root {
-    --bg-dark: #282c34;       /* Deep Slate Gray Background */
-    --card-dark: #3c414c;     /* Slightly Lighter Card Background */
-    --accent-cyan: #61dafb;   /* Vibrant Cyan Accent */
-    --text-light: #f5f5f5;    /* Off-White Text */
-    --text-muted: #abb2bf;    /* Muted Gray for Labels */
-    --btn-primary: #61dafb;   /* Button matches accent */
-    --btn-hover: #38c8f0;     /* Darker Cyan on Hover */
-    --input-bg: #4b515d;      /* Input Field Background */
-    --border-color: rgba(97, 218, 251, 0.2); /* Cyan border accent */
-    --glow-shadow: 0 0 10px rgba(97, 218, 251, 0.5); /* Cyan glow */
+    --bg-dark: #282c34; 
+    --card-dark: #3c414c;  
+    --accent-cyan: #61dafb; 
+    --text-light: #f5f5f5;
+    --text-muted: #abb2bf;
+    --btn-primary: #61dafb; 
+    --btn-hover: #38c8f0;
+    --input-bg: #4b515d; 
+    --border-color: rgba(97, 218, 251, 0.2);
+    --glow-shadow: 0 0 10px rgba(97, 218, 251, 0.5); 
 }
 
 body.dark-mode {
@@ -63,12 +61,10 @@ h1 {
 .weather-card {
     background-color: var(--card-dark);
     border: 1px solid var(--border-color);
-    border-radius: 12px; /* Slightly reduced border radius */
+    border-radius: 12px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     width:100%;
-    /* max-width: 450px;  */
-    /* min-height: 400px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,8 +73,6 @@ h1 {
     z-index: 10;
     transition: box-shadow 0.3s ease;
 }
-
-/* Removed the complex ::before effect for a cleaner look */
 .weather-card:hover {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), var(--glow-shadow);
 }
@@ -112,7 +106,7 @@ h1 {
     height: 50px;
     font-size: 20px;
     background-color: var(--btn-primary);
-    color: var(--bg-dark); /* Dark text on bright button */
+    color: var(--bg-dark); 
     border: none;
     border-radius: 8px;
     font-weight: 700;
@@ -136,7 +130,7 @@ h1 {
 #weather-info {
     width: 100%; 
     margin-top: 20px;
-    background-color: #31363f; /* Darker blue/gray info panel */
+    background-color: #31363f;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 25px;
@@ -160,9 +154,9 @@ h1 {
 }
 
 .weather-icon {
-    width: 120px; /* Slightly larger icon */
+    width: 120px;
     height: 120px;
-    filter: drop-shadow(0 0 5px rgba(97, 218, 251, 0.3)); /* Subtle cyan shadow on icon */
+    filter: drop-shadow(0 0 5px rgba(97, 218, 251, 0.3));
     margin-bottom: 5px;
 }
 
@@ -189,12 +183,10 @@ h1 {
     line-height: 1.5;
     text-align: left;
     width: 100%;
-    
-    /* 2-ROW DISPLAY: 4 columns for desktop */
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    gap: 10px 5px; /* Tighter gap */
-    align-items: center; /* Center items vertically */
+    gap: 10px 5px;
+    align-items: center;
 }
 
 .info div {
@@ -202,15 +194,15 @@ h1 {
     flex-direction: row; 
     align-items: center;
     gap: 5px;
-    border-left: none; /* Removed vertical separator for cleaner look */
+    border-left: none;
     padding-left: 0;
-    height: 100%; /* Ensures alignment within the grid cell */
+    height: 100%;
 }
 
 .info-icon {
     color: var(--accent-cyan);
     font-size: 1.1em;
-    min-width: 18px; /* Fixed width to prevent misalignment */
+    min-width: 18px;
     text-align: center;
 }
 
@@ -218,13 +210,13 @@ h1 {
     color: var(--text-muted);
     font-weight: 400;
     margin-bottom: 0;
-    font-size: 0.8em; /* Slightly smaller label text */
+    font-size: 0.8em;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevent label from wrapping */
+    white-space: nowrap;
 }
 
 .info span { 
-    display: block; /* Make value wrap below the label if needed */
+    display: block;
     color: var(--text-light);
     font-weight: 600;
     line-height: 1.1;
@@ -238,10 +230,8 @@ h1 {
     margin-top: 30px;
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .info {
-        /* On medium screens, switch to 2 items per row (4 rows total) */
         grid-template-columns: repeat(2, 1fr); 
         gap: 15px 20px;
     }
@@ -249,7 +239,6 @@ h1 {
 
 @media screen and (max-width: 480px) {
     .info {
-        /* On small screens, stack details in a single column */
         grid-template-columns: 1fr;
     }
     .weather-card {
@@ -264,14 +253,12 @@ h1 {
         font-size: 3em;
     }
     .info div {
-        /* In single column, allow the elements to stack */
         flex-direction: row; 
         align-items: center;
     }
-    /* Ensure the data fills the space in 1-column layout */
     .info strong {
         white-space: normal;
-        margin-right: auto; /* Push the value to the right */
+        margin-right: auto;
     }
     .info span {
         font-size: 1em;
